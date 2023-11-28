@@ -15,6 +15,7 @@ async function getReciters() {
     el.moshaf.forEach((moshaf) => {
       if (moshaf.name.includes("المصحف المعلم")) {
         option.classList.add("teach");
+        option.innerHTML += " (معلم) ";
       }
     });
     // chooseReciter.innerHTML += `<option value="${el.id}">${el.name}</option>`;
