@@ -8,6 +8,7 @@ https://templatemo.com/tm-572-designer
 
 body {
   font-family: system-ui;
+  font-family: 'Amiri', serif;
 }
 
 .expanded {
@@ -221,6 +222,7 @@ header.nav-scrolled .main-navigation .navbar-brand {
   width: 60px;
   position: absolute;
   top: 10px;
+  z-index: 1;
 }
 header.nav-scrolled .main-navigation .navbar-nav {
   margin-top: 0px;
@@ -248,6 +250,7 @@ header.nav-scrolled .main-navigation .navbar-nav .nav-item .active {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  z-index: 1;
 }
 
 .navbar-light {
@@ -296,6 +299,7 @@ header.nav-scrolled .main-navigation .navbar-nav .nav-item .active {
   border-top: 2px solid transparent;
   -webkit-transition: all .5s;
   transition: all .5s;
+  font-size: 18px;
 }
 
 .navbar-light .navbar-nav .nav-item .nav-link:hover {
@@ -321,6 +325,7 @@ header.nav-scrolled .main-navigation .navbar-nav .nav-item .active {
 
 .navbar-light .navbar-toggler {
   background-color: #fff;
+  z-index: 1;
 }
 
 button:focus:not(:focus-visible) {
@@ -334,21 +339,34 @@ button:focus:not(:focus-visible) {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  padding: 130px 0px 200px 0px;
+  /* padding: 130px 0px 200px 0px; */
   text-align: center;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.main-banner::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .main-banner {
     padding: 130px 0px 180px 0px;
   }
-}
+} */
 
+.main-banner .container {
+  position: relative;
+}
 .main-banner h6 {
   font-size: 20px;
   color: #ffffff;
@@ -513,6 +531,7 @@ footer.no-margin-footer {
 footer {
   margin-top: 80px;
   text-align: center;
+  font-family: system-ui;
 }
 
 @media (min-width: 992px) {
