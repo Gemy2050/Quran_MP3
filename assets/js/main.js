@@ -1,6 +1,18 @@
 const apiUrl = "https://mp3quran.net/api/v3";
 const language = "ar";
 
+// Stop All Audios Except Current Audio [Chosen Audio]
+document.querySelectorAll("audio").forEach((aud) => {
+  aud.onplay = function () {
+    document.querySelectorAll("audio").forEach((el) => {
+      if (el.id != aud.id) {
+        el.pause();
+      }
+    });
+  };
+});
+
+// Quran
 async function getReciters() {
   const chooseReciter = document.querySelector("#chooseReciter");
   let res = await fetch(`${apiUrl}/reciters?language=${language}`);
@@ -67,7 +79,7 @@ async function getSurah(surahServer, surahList) {
 
   chooseSurah.addEventListener("change", (e) => {
     // Add Source To Audio [Autoplay]
-    document.querySelector("audio").src = e.target.value;
+    document.querySelector("#quranAudio").src = e.target.value;
   });
 }
 
@@ -82,3 +94,42 @@ function playLive(url) {
     });
   }
 }
+
+// Radio
+
+async function getRadio() {
+  const chooseRadio = document.querySelector("#chooseRadio");
+  let res = await fetch(`${apiUrl}/radios?language=${language}`);
+  let data = await res.json();
+
+  chooseRadio.innerHTML = `<option value="">اختر قارئ</option>`;
+  data.radios.forEach((el) => {
+    chooseRadio.innerHTML += `<option value="${el.url}">${el.name}</option>`;
+  });
+
+  chooseRadio.addEventListener("change", (e) => {
+    document.querySelector("#radioAudio").src = e.target.value;
+  });
+}
+getRadio();
+
+// Tafsir
+
+// Radio
+
+async function getTafsir() {
+  const chooseTafsir = document.querySelector("#chooseTafsir");
+  let res = await fetch(`${apiUrl}/tafsir?tafsir=1&language=${language}`);
+  let data = await res.json();
+
+  console.log(data.tafasir.soar);
+  chooseTafsir.innerHTML = `<option value="">اختر سوره</option>`;
+  data.tafasir.soar.forEach((el) => {
+    chooseTafsir.innerHTML += `<option value="${el.url}">${el.name}</option>`;
+  });
+
+  chooseTafsir.addEventListener("change", (e) => {
+    document.querySelector("#tafsirAudio").src = e.target.value;
+  });
+}
+getTafsir();

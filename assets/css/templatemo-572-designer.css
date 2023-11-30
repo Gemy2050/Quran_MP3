@@ -220,7 +220,7 @@ header.nav-scrolled .main-navigation .navbar-brand {
 .navbar-brand img {
   width: 60px;
   position: absolute;
-  top: 0px;
+  top: 10px;
 }
 header.nav-scrolled .main-navigation .navbar-nav {
   margin-top: 0px;
@@ -336,6 +336,10 @@ button:focus:not(:focus-visible) {
   background-position: center center;
   padding: 130px 0px 200px 0px;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -368,7 +372,8 @@ button:focus:not(:focus-visible) {
 }
 
 .search-form {
-  margin-top: -150px;
+  /* margin-top: -150px; */
+  padding: 50px 0;
 }
 
 .search-form #search-form {
