@@ -12,6 +12,20 @@ document.querySelectorAll("audio").forEach((aud) => {
   };
 });
 
+// Play Next Surah After Ending The Current Surah
+document.querySelector("#quranAudio").onended = function () {
+  const chooseSurah = document.querySelector("#chooseSurah");
+  let index =
+    chooseSurah.options.selectedIndex != chooseSurah.options.length - 1
+      ? chooseSurah.options.selectedIndex
+      : 0;
+
+  const selectedSurah = chooseSurah.options[index + 1];
+  selectedSurah.selected = true;
+
+  this.src = selectedSurah.value;
+};
+
 // Quran
 async function getReciters() {
   const chooseReciter = document.querySelector("#chooseReciter");
@@ -52,7 +66,7 @@ async function getMoshaf(id) {
     chooseMoshaf.innerHTML += `<option value="${el.id}" data-server="${el.server}" data-surahlist="${el.surah_list}" >${el.name}</option>`;
   });
 
-  chooseMoshaf.addEventListener("change", (e) => {
+  chooseMoshaf.addEventListener("change", () => {
     const selectedMoshaf =
       chooseMoshaf.options[chooseMoshaf.options.selectedIndex];
     const surahServer = selectedMoshaf.dataset.server;
@@ -73,7 +87,7 @@ async function getSurah(surahServer, surahList) {
     padId = `${el.id}`.padStart(3, "0");
 
     if (surahList.includes(`${el.id}`)) {
-      chooseSurah.innerHTML += `<option value="${surahServer}${padId}.mp3">${el.name}</option>`;
+      chooseSurah.innerHTML += `<option value="${surahServer}${padId}.mp3" >${el.name}</option>`;
     }
   });
 
@@ -115,14 +129,11 @@ getRadio();
 
 // Tafsir
 
-// Radio
-
 async function getTafsir() {
   const chooseTafsir = document.querySelector("#chooseTafsir");
   let res = await fetch(`${apiUrl}/tafsir?tafsir=1&language=${language}`);
   let data = await res.json();
 
-  console.log(data.tafasir.soar);
   chooseTafsir.innerHTML = `<option value="">اختر سوره</option>`;
   data.tafasir.soar.forEach((el) => {
     chooseTafsir.innerHTML += `<option value="${el.url}">${el.name}</option>`;

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-  <title>Quran Player</title>
+  <title>القرأن الكريم</title>
 
   <link rel="shortcut icon"
     href="https://img.freepik.com/premium-vector/al-quran-islamic-logo-quran-e-pak-quraan-e-kareem-holy-book_791907-201.jpg"
@@ -86,7 +86,7 @@ https://templatemo.com/tm-572-designer
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#quran-mp3">استعرض السور</a>
+              <a class="nav-link active" href="#quran-mp3"> القرأن الكريم </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#tafsir">تفاسير</a>
@@ -95,7 +95,7 @@ https://templatemo.com/tm-572-designer
               <a class="nav-link" href="#radio">راديو</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact">بث مباشر</a>
+              <a class="nav-link" href="#prays-section">مواقيت الصلاه</a>
             </li>
           </ul>
         </div>
@@ -109,9 +109,8 @@ https://templatemo.com/tm-572-designer
       <div class="row">
         <div class="col-lg-12">
           <div class="header-text">
-            <h4 class="mb-5 text-white">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</h4>
+            <h4 class="mb-4 text-white">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</h4>
             <h2 class="text-light" style="font-size: 40px">وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</h2>
-            <!-- <h2>القرأن الكريم</h2> -->
           </div>
         </div>
       </div>
@@ -121,7 +120,7 @@ https://templatemo.com/tm-572-designer
   <div class="search-form">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 mb-5" id="quran-mp3">
+        <div class="col-lg-12 my-5" id="quran-mp3">
           <form id="search-form" name="gs" method="submit" role="search" action="#">
             <h2 class="text-center text-secondary mb-4">القرأن الكريم</h2>
             <div class="row">
@@ -208,6 +207,24 @@ https://templatemo.com/tm-572-designer
     </div>
   </div>
 
+
+  <div class="prays-section" id="prays-section">
+    <h1 class="text-center">مواقيت الصلاه</h1>
+    <div class="container">
+      <div class="select-city">
+        <select id="city-name">
+        </select>
+      </div>
+      <div class="title-box">
+        <h2 class="title"></h2>
+        <div class="date"></div>
+      </div>
+      <div class="times">
+      </div>
+    </div>
+
+    <audio src="" preload="auto" autoplay controls style="display: none;"></audio>
+  </div>
 
 
   <section class="contact-us" id="contact">
@@ -340,6 +357,7 @@ https://templatemo.com/tm-572-designer
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
+  <script src="prays.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
     setTimeout(function () {
