@@ -179,7 +179,7 @@ function handleTime(hours, minutes, pray) {
           clearInterval(id);
         }
 
-        if (+remainMinutes == 14 && +remainHours == 0 && !notificationStarted) {
+        if (+remainMinutes < 15 && +remainHours == 0 && !notificationStarted) {
           Notification.requestPermission((per) => {
             if (per == "granted")
               new Notification(`اقتربت صلاه` + ` ${prays[pray]} `, {
