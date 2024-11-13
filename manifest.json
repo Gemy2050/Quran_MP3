@@ -1,5 +1,5 @@
 {
-  "theme_color": "#0075FF",
+  "theme_color": "#000",
   "background_color": "#FFF",
   "display": "standalone",
   "scope": "/",
@@ -31,10 +31,5 @@
       }
   ],
   "shortcuts": [
-    {
-      "name": "Al Quraan",
-      "url": "https://gemy2050.github.io/Quran_MP3",
-      "icon": "https://img.freepik.com/premium-vector/al-quran-islamic-logo-quran-e-pak-quraan-e-kareem-holy-book_791907-201.jpg"
-    }
   ]
 }
