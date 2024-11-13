@@ -1,0 +1,40 @@
+{
+  "theme_color": "#0075FF",
+  "background_color": "#FFF",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/Quran_MP3/index.html",
+  "name": "Quran, Tafseer and Prays",
+  "short_name": "Al Quraan Al Kareem",
+  "description": "Quran Player, Tafseer, Prays Time",
+  
+  "icons": [
+      {
+          "src": "https://img.freepik.com/premium-vector/al-quran-islamic-logo-quran-e-pak-quraan-e-kareem-holy-book_791907-201.jpg",
+          "sizes": "192x192",
+          "type": "image/png"
+      },
+      {
+          "src": "https://img.freepik.com/premium-vector/al-quran-islamic-logo-quran-e-pak-quraan-e-kareem-holy-book_791907-201.jpg",
+          "sizes": "256x256",
+          "type": "image/png"
+      },
+      {
+          "src": "https://img.freepik.com/premium-vector/al-quran-islamic-logo-quran-e-pak-quraan-e-kareem-holy-book_791907-201.jpg",
+          "sizes": "384x384",
+          "type": "image/png"
+      },
+      {
+          "src": "https://img.freepik.com/premium-vector/al-quran-islamic-logo-quran-e-pak-quraan-e-kareem-holy-book_791907-201.jpg",
+          "sizes": "512x512",
+          "type": "image/png"
+      }
+  ],
+  "shortcuts": [
+    {
+      "name": "Al Quraan",
+      "url": "https://gemy2050.github.io/Quran_MP3",
+      "icon": "https://img.freepik.com/premium-vector/al-quran-islamic-logo-quran-e-pak-quraan-e-kareem-holy-book_791907-201.jpg"
+    }
+  ]
+}
